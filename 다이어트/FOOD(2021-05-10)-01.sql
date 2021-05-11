@@ -72,3 +72,22 @@ CREATE TABLE tbl_myfoods(
 DROP TABLE tbl_myfoods;
 
 commit;
+CREATE VIEW view_섭취정보 AS
+(   
+    SELECT M.mf_date AS 날짜 ,
+        F.fo_name AS 식품명,
+        F.fo_kcal * M.mf_eat AS 칼로리,
+        F.fo_protein * m.mf_eat AS 단백질,
+        F.fo_fat * mf_eat AS 지방,
+        F.fo_carbo * mf_eat AS 탄수화물,
+        F.fo_sugars * mf_eat AS 총당류
+    FROM tbl_foods F
+        LEFT JOIN tbl_myfoods M
+            ON F.fo_fcode = m.mf_fcode
+            WHERE M.mf_date IS NOT NULL
+);
+
+DROP VIEW view_섭취정보;
+
+SELECT *
+FROM view_섭취정보;
