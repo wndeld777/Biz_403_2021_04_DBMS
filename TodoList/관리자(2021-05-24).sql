@@ -1,0 +1,10 @@
+-- 여기는 관리자 접속
+
+CREATE TABLESPACE todoListDB
+DATAFILE 'C:/oraclexe/data/todoListDB.dbf'
+SIZE 1M AUTOEXTEND ON NEXT 1K;
+
+CREATE USER todoList IDENTIFIED BY todoList
+DEFAULT TABLESPACE todoListDB;
+
+GRANT DBA TO todoList;
