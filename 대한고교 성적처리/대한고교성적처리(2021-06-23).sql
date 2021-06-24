@@ -35,9 +35,14 @@ CREATE TABLE tbl_subject(
 	sb_prof	VARCHAR(20)		
 );
 DROP TABLE tbl_subject;
-INSERT INTO tbl_subject(sb_code,sb_name,sb_prof)
+SELECT * FROM tbl_score;
+INSERT INTO tbl_score(sc_stnum, sc_sbcode,sc_score)
+VALUE('20210001','S001',88);
+SELECT * FROM tbl_subject;
+DELETE FROM tbl_subject WHERE sb_code = '과목코드';
+INSERT INTO tbl_subject(sb_code,sb_name)
 value('S001','국어');
-INSERT INTO tbl_subject(sb_code,sb_name,sb_prof)
+INSERT INTO tbl_subject(sb_code,sb_name)
 value('S002','영어');
-INSERT INTO tbl_subject(sb_code,sb_name,sb_prof)
+INSERT INTO tbl_subject(sb_code,sb_name)
 value('S003','수학');
