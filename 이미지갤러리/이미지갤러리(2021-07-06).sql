@@ -20,6 +20,7 @@ CREATE TABLE tbl_files(
 	file_original	VARCHAR(125)	NOT NULL	,
 	file_upname	VARCHAR(125)	NOT NULL	
 );
+SELECT * FROM tbl_files;
 DROP TABLE tbl_files;
 
 INSERT INTO tbl_gallery

@@ -1,9 +1,3 @@
-CREATE DATABASE honjalDB;
-
-USE honjalDB;
-
-
-CREATE TABLE tbl_member(
 	member_num	BIGINT AUTO_INCREMENT PRIMARY KEY,
 	member_level BIGINT	NOT NULL,
 	member_id VARCHAR(20)	NOT NULL UNIQUE,
@@ -14,6 +8,8 @@ CREATE TABLE tbl_member(
 DROP TABLE tbl_member;
 SELECT * FROM tbl_member;
 
+SELECT * FROM tbl_member
+		WHERE member_id = 'ddddddd';
 
 CREATE TABLE tbl_content(
 	content_num	BIGINT	AUTO_INCREMENT	PRIMARY KEY,
