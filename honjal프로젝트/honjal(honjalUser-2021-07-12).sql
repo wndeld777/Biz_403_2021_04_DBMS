@@ -1,3 +1,5 @@
+use honjalDB;
+CREATE TABLE tbl_member(
 	member_num	BIGINT AUTO_INCREMENT PRIMARY KEY,
 	member_level BIGINT	NOT NULL,
 	member_id VARCHAR(20)	NOT NULL UNIQUE,
@@ -25,7 +27,8 @@ CREATE TABLE tbl_content(
 );
 DROP TABLE tbl_content;
 SELECT * FROM tbl_content;
-
+INSERT INTO tbl_content(member_num,content_nname,board_code,content_date,content_time,content_view,content_good,content_title,content_text)
+VALUES(2,'관리자','A0002','2021-07-16','13:15',1,15,'청소비법','청소는 이렇게');
 
 CREATE TABLE tbl_board(
 	board_code	CHAR(5)		PRIMARY KEY,
@@ -37,12 +40,12 @@ SELECT * FROM tbl_board;
 
 CREATE TABLE tbl_comment(
 	comment_num	BIGINT	AUTO_INCREMENT	PRIMARY KEY,
-	content_num	BIGINT	NOT NULL,
-	member_num	BIGINT	NOT NULL,
-	board_code	CHAR(4)	NOT NULL,
-	comment_writer	VARCHAR(10)	NOT NULL,
-	comment_text	VARCHAR(500)	NOT NULL,	
-	comment_time	VARCHAR(20)	NOT NULL	
+	content_num	BIGINT,
+	member_num	BIGINt,
+	board_code	CHAR(4)	,
+	comment_writer	VARCHAR(10)	,
+	comment_text	VARCHAR(500)	,	
+	comment_time	VARCHAR(20)	
 );
 DROP TABLE tbl_comment;
 SELECT * FROM tbl_comment;
